@@ -1,58 +1,95 @@
-# CSS125L
-Hypothetical Language Interpreter using Python
+# CS145 Lab Exercise: A Simple Interpreter
 
-CS145 Lab Exercise
-A Simple “Interpreter”
-Your simple interpreter called “HLInt.XXX” reads a source code written in our hypothetical language 
-“HL.” Then, it performs operations based on the source code.
-Our hypothetical language has the following:
-1) Variable declaration 
-x:integer; <br/>
-y:double; <br/>
-integer, double – data types
-1) Assignment statements
-x:= 5;
-y:= 2.35;
-1) Mathematical operations
-Addition and subtraction of single digit integers and double values with precision of 2
+## Overview
+
+This lab exercise involves building a simple interpreter called `HLInt.XXX`, which processes source code written in a hypothetical language called **HL**. The interpreter reads the source code and performs basic operations defined by the language.
+
+## HL Language Features
+
+The **HL** language supports the following features:
+
+### 1. Variable Declaration
+```hl
+x: integer;
+y: double;
+```
+- `integer`, `double` – Data types
+
+### 2. Assignment Statements
+```hl
+x := 5;
+y := 2.35;
+```
+
+### 3. Mathematical Operations
+- Addition and subtraction of single-digit integers and double values with precision of 2 decimal places.
+```hl
 x = 3 + 2;
 y = 4 + 2.56;
-4) Sending output to screen
-output<<” <string>”; 
-output<<value;
-output<<”hello”;
-output<<x;
-5) Conditional statement
-One-way if
-If(<condition>)
- <statement>
->,<,==.!=
+```
+
+### 4. Output to Screen
+```hl
+output << "<string>";
+output << value;
+```
+Examples:
+```hl
+output << "hello";
+output << x;
+```
+
+### 5. Conditional Statement (One-way `if`)
+```hl
+if (<condition>)
+    <statement>;
+```
+- Supports relational operators: `>`, `<`, `==`, `!=`
+
 Example:
-x:= 6;
-If(x<5)
- Output<<X;
-Program Listing
-PROG1.HL
+```hl
+x := 6;
+if (x < 5)
+    output << x;
+```
+
+## Program Examples
+
+### PROG1.HL
+```hl
 x: integer;
-x:= 5;
-output<<x;
-PROG2.HL
+x := 5;
+output << x;
+```
+
+### PROG2.HL
+```hl
 x: integer;
 y: double;
-x:= 3;
-y:= 1.25;
-output<<x+y;
-PROG3.HL
+x := 3;
+y := 1.25;
+output << x + y;
+```
+
+### PROG3.HL
+```hl
 x: integer;
 y: double;
-x:= 3;
-if(x<5)
- output<<x;
-The Process:
-When HLInt.XXX runs, it opens a source code [PROG1.HL or PROG2.HL or PROG3.HL], then it removes all 
-spaces in the program and sends the contents “without spaces” to an output file named 
-“NOSPACES.TXT” Then, it sends reserved words and symbols found in the program to “RES_SYM.TXT” 
-Finally, it prints on the screen “ERROR” if it finds any syntax error in the program or “NO ERROR(S) 
-FOUND” if there are no errors.
-Due date:
-This is due by Sept. 21, 2024.
+x := 3;
+if (x < 5)
+    output << x;
+```
+
+## Interpreter Workflow
+
+When `HLInt.XXX` is executed, it follows these steps:
+
+1. Opens a source code file (`PROG1.HL`, `PROG2.HL`, or `PROG3.HL`).
+2. Removes all spaces from the program and writes the output to `NOSPACES.TXT`.
+3. Sends reserved words and symbols found in the program to `RES_SYM.TXT`.
+4. Checks for syntax errors:
+    - Prints **ERROR** if any syntax error is found.
+    - Prints **NO ERROR(S) FOUND** if the program is syntactically correct.
+
+## Due Date
+- This exercise is due by **Sept. 21, 2024**.
