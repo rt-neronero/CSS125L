@@ -1,0 +1,6 @@
+x: integer;
+y: double;
+x:= 3;
+y:= 1.25;
+output<<x+y;
+output<<" This is a 'test string with spaces' that needs modification. ";
