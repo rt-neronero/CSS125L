@@ -116,9 +116,8 @@ def check_syntax_and_output(lines):
     return errors, outputs
 
 def main():
-    testNum = input("Input Test Number: ")
-    path = f"tests/PROG{testNum}.HL"
-
+    path = input("Enter file name: ")
+    
     try:
         with open(path, 'r') as file:
             content = file.read()
